@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!-- Загрузка статических файлов -->
+{% load static %}
+
+<!-- Теги head для метаданных страницы -->
+<html>
+  <head>
+    <!-- Определение кодировки -->
+    <meta charset="UTF-8">
+    
+    <!-- Задание заголовка страницы -->
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Импорт шрифтов Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Загрузка CSS Bootstrap -->
+    <link href="{% static  "css/bootstrap.min.css"  %}" rel="stylesheet">
+
+    <!-- Стили для этого конкретного шаблона -->
+    <link href="{% static  "css/3-col-portfolio.css" %}" rel="stylesheet">
+    
+    <!-- Метатег для оптимизации мобильных устройств -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <!-- Теги body для содержимого страницы -->
+  <body>
+      <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Список учеников школы</a>
+      </div>
+    </nav>
+
+    <!-- Основной контейнер для содержимого -->
+    <div class="container">{% block content %}{% endblock %}</div>
+
+    <!-- JavaScript-файлы для оптимизации загрузки -->
+    <script type="text/javascript" src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+      <!-- JavaScript Bootstrap core -->
+    <script src="{% static  "js/jquery.min.js" %}"></script>
+  </body>
+</html>
